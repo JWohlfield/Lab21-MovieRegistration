@@ -1,0 +1,41 @@
+﻿@model Movie
+<form method="post">
+@*<form asp-controller="Home" asp-action="MovieSummary">*@
+
+    <input type="number" name="ID" required />
+    <label>Movie ID</label>
+
+    <br />
+    <input type="text" name="Title" maxlength="50" required />
+    <label>Title</label>
+
+    <br />
+    <select asp-for="Genre" asp-items="@Html.GetEnumSelectList<Genre>()"></select>
+
+    <!--<select name="Genre">-->
+        <!--How can I make this a dynamic list? -->
+        <!--<option value="@Genre.Action">Action</option>
+        <option value="@Genre.Children">Children</option>
+        <option value="@Genre.Comedy">Comedy</option>
+        <option value="@Genre.Drama">@Genre.Drama</option>
+        <option value="@Genre.Horror">@Genre.Horror</option>
+        <option value="@Genre.SciFi">@Genre.SciFi</option>
+    </select>-->
+    <label>Genre</label>
+
+    <br />
+    <!--Can I make the max be the current year instead of a literal number?-->
+    <input type="number" name="Year" min="1880" max="2021" required />
+    <label>Year</label>
+
+    <br />
+    <input type="text" name="Actors" required />
+    <label>Actors</label>
+
+    <br />
+    <input type="text" name="Director" required />
+    <label>Director</label>
+
+    <br /> <br />
+    <input type="submit" />
+</form>
